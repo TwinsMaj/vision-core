@@ -1,0 +1,10 @@
+{
+  "verbose": true,
+  "restartable": "rs",
+  "ignore": [".git", "node_modules/", "dist/", "coverage/"],
+  "watch": ["src/**/*.ts"],
+  "execMap": {
+    "ts": "node --inspect=0.0.0.0:9229 --nolazy -r ts-node/register"
+  },
+  "ext": "js, json, ts"
+}

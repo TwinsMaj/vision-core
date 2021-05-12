@@ -1,0 +1,25 @@
+{
+	"compilerOptions": {
+		"target": "ESNEXT",
+		"module": "commonjs",
+		"outDir": "./dist",
+		"removeComments": false,
+		"noEmit": false,
+		"strict": true,
+		"strictNullChecks": true,
+		"alwaysStrict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"moduleResolution": "node",
+		"baseUrl": "./src",
+		"esModuleInterop": true,
+		"inlineSourceMap": true,
+		"skipLibCheck": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "strictPropertyInitialization": false,
+		"forceConsistentCasingInFileNames": true
+	},
+	"exclude": ["dist", "node_modules", "jest.config.js"],
+	"include": ["src"]
+}

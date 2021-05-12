@@ -1,0 +1,34 @@
+version: '3.7'
+services:
+  db:
+    image: mysql
+    command: mysqld --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      - MYSQL_DATABASE=vision
+      - MYSQL_ROOT_PASSWORD=romantic
+    volumes:
+      - db-config:/etc/mysql
+      - db-data:/var/lib/mysql
+  vision-core:
+    ports:
+      - 9845:9845
+    build: .
+    environment:
+      - APP_NAME=back-core
+      - NODE_ENV=development
+      - MYSQL_DATABASE=vision
+      - MYSQL_USER=root
+      - MYSQL_ROOT_PASSWORD=romantic
+      - MYSQL_HOST=db
+      - MYSQL_PORT=3306
+    volumes:
+      - .:/app:cached
+    depends_on:
+      - db
+    command: sh -c "npm run migrations:run && npm run dev"
+
+volumes:
+  db-config:
+  db-data:
+

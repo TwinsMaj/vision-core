@@ -1,0 +1,57 @@
+{
+  "name": "vision-core",
+  "version": "1.0.0",
+  "description": "backend service for word game",
+  "main": "index.tsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TwinsMaj/vision-core.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TwinsMaj/vision-core/issues"
+  },
+  "homepage": "https://github.com/TwinsMaj/vision-core#readme",
+  "devDependencies": {
+    "@types/bunyan": "^1.8.6",
+    "@types/cors": "^2.8.10",
+    "@types/express": "^4.17.11",
+    "@types/jest": "^26.0.22",
+    "@types/morgan": "^1.9.2",
+    "@typescript-eslint/eslint-plugin": "^4.20.0",
+    "@typescript-eslint/parser": "^4.20.0",
+    "cors": "^2.8.5",
+    "eslint": "^7.23.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "husky": "^6.0.0",
+    "jest": "^26.6.3",
+    "lint-staged": "^10.5.4",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1",
+    "ts-jest": "^26.5.4",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "bunyan": "^1.8.15",
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "reflect-metadata": "^0.1.13",
+    "tsoa": "^3.7.0",
+    "typeorm": "^0.2.32"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "npm run format",
+      "npm run lint:fix"
+    ]
+  }
+}
