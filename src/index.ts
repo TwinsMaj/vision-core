@@ -1,6 +1,7 @@
 import app from './app';
 import cors from 'cors';
 import morgan from 'morgan';
+import { connectDB } from './data';
 import { logger } from './utils/logger';
 
 const port = parseInt(process.env.PORT || '9845', 10);
@@ -19,6 +20,7 @@ const startServer = async () => {
 		logger.info('Initializing service');
 
 		await startServer();
+		await connectDB();
 	} catch (error) {
 		logger.error(error, 'error occurred while initializing service');
 	}

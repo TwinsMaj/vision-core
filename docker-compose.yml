@@ -26,7 +26,7 @@ services:
       - .:/app:cached
     depends_on:
       - db
-    command: npm run dev
+    command: sh -c "npm run migrations:run && npm run dev"
 
 volumes:
   db-config:
