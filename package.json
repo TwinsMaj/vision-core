@@ -4,7 +4,17 @@
   "description": "backend service for word game",
   "main": "index.tsx",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rm -rf dist && npm run build:server",
+    "build:server": "tsc -p .",
+    "dev": "nodemon --config nodemon.json src/index.ts | bunyan -o short",
+    "format": "prettier --config .prettierrc 'src/**/*.{js,ts,json,md}' --write",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "migrations:create": "ts-node ./node_modules/.bin/typeorm migration:create",
+    "migrations:run": "ts-node ./node_modules/.bin/typeorm migration:run --config ./src/config/database.ts",
+    "test": "jest --config=jest.config.js --detectOpenHandles",
+    "prepare": "rm -rf '.husky' && husky install && npm run prepare:husky",
+    "prepare:husky": "npx husky add .husky/pre-commit 'npx lint-staged\nnpm run test'"
   },
   "repository": {
     "type": "git",
